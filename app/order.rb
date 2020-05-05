@@ -1,7 +1,8 @@
 class Order
 
-  attr_reader :user_id, :quantity, :price, :type
-  attr_accessor :id
+  attr_reader :user_id, :price, :type
+  attr_accessor :id, :status, :quantity
+
   TYPES = [ :BUY, :SELL ]
 
   def initialize(user_id, quantity, price, type)
@@ -10,6 +11,7 @@ class Order
     @quantity = quantity
     @price = price
     @type = type 
+    @status = :pending
   end
 
   private 
